@@ -6,7 +6,7 @@
 #    By: mli <mli@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/21 23:54:54 by mli               #+#    #+#              #
-#    Updated: 2020/08/01 16:43:04 by mli              ###   ########.fr        #
+#    Updated: 2020/08/01 17:52:31 by mli              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = awesomephonebook
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS_FILES = main.cpp PhoneBook.cpp print.cpp
+SRCS_FILES = main.cpp Contact.cpp print.cpp
 
 OBJS_PATH = ./obj/
 OBJS = ${addprefix ${OBJS_PATH}, ${SRCS_FILES:.cpp=.o}}

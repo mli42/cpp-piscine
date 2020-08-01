@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 22:32:51 by mli               #+#    #+#             */
-/*   Updated: 2020/07/24 00:05:45 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 18:03:35 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 
-class PhoneBook {
+#include <string>
+
+class Contact {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		Contact(void);
+		~Contact(void);
+
+		std::string first_name;
+		std::string last_name;
+		std::string nickname;
+		std::string login;
+		std::string postal_address;
+		std::string email_address;
+		std::string phone_number;
+		std::string birthday_date;
+		std::string favorite_meal;
+		std::string underwear_color;
+		std::string darkest_secret;
 
 		static int	getContactNb(void);
 		static void	incContactNb(void);
@@ -24,18 +38,4 @@ class PhoneBook {
 		static int _ContactNb;
 };
 
-#endif // ********************************************* PHONEBOOK_CLASS_H end //
-
-/*
-first_name
-last_name
-nickname
-login
-postal_address
-email_address
-phone_number
-birthday_date
-favorite_meal
-underwear_color
-darkest_secret
-*/
+#endif // ********************************************* CONTACT_CLASS_HPP end //

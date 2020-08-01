@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 22:33:11 by mli               #+#    #+#             */
-/*   Updated: 2020/07/23 23:52:16 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 17:51:34 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-PhoneBook::PhoneBook(void) {
+Contact::Contact(void) {
 	return ;
 }
 
-PhoneBook::~PhoneBook(void) {
+Contact::~Contact(void) {
 	return ;
 }
 
-int	PhoneBook::_ContactNb = 0;
+int	Contact::_ContactNb = 0;
 
-int	PhoneBook::getContactNb(void) {
-	return (PhoneBook::_ContactNb);
+int	Contact::getContactNb(void) {
+	return (Contact::_ContactNb);
 }
 
-void	PhoneBook::incContactNb(void) {
-	PhoneBook::_ContactNb++;
+void	Contact::incContactNb(void) {
+	Contact::_ContactNb++;
 	return ;
 }

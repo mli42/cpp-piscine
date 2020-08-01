@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 15:52:08 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 16:21:35 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 17:53:45 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ static void	ft_pseachline(std::string str1, std::string str2,
 	std::cout << std::endl;
 }
 
-void	ft_plist(const PhoneBook (&book)[8])
+void	ft_plist(const Contact (&book)[8])
 {
 	int i;
 
-	if ((i = PhoneBook::getContactNb()) == 0)
+	if ((i = Contact::getContactNb()) == 0)
 	{
 		std::cout << "Your Awesome PhoneBook is empty..." << std::endl;
 		return ;

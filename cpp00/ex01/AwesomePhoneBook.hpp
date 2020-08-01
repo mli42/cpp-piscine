@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 16:17:51 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 16:23:53 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 17:55:29 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-void	ft_plist(const PhoneBook (&book)[8]);
+void	ft_plist(const Contact (&book)[8]);
 
 #endif // ********************************************** AWESOMEPHONEBOOK end //
