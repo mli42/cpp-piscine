@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/23 22:32:51 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 18:03:35 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 18:53:21 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class Contact {
 		std::string favorite_meal;
 		std::string underwear_color;
 		std::string darkest_secret;
+
+		void	fill(void);
 
 		static int	getContactNb(void);
 		static void	incContactNb(void);

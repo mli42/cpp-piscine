@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 00:43:46 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 17:54:25 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 19:05:55 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 
 static void	ft_add(Contact book[8])
 {
-	if (Contact::getContactNb() >= 8)
+	int i = Contact::getContactNb();
+	if (i >= 8)
 	{
-		std::cout << "Too many contacts; Your Awesome PhoneBook is full please exit...\n";
+		std::cout << "Too many contacts; Your Awesome PhoneBook is full...\n";
 		return ;
 	}
-	Contact &new_contact = book[Contact::getContactNb()];
 	Contact::incContactNb();
-	std::cout << "Should add\n";
-	(void)book;
-	(void)new_contact;
+	book[i].fill();
 }
 
 static void	ft_search(Contact book[8])
 {
-	std::cout << "Should search\n";
-	(void)book;
+	ft_plist(book);
 }
 
 static void	ft_ask(void)

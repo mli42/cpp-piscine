@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 15:52:08 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 17:53:45 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 19:30:58 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ static void	ft_pcontent(std::string str)
 		str.resize(9);
 		str.push_back('.');
 	}
-	std::cout << str << std::endl;
+	std::cout << str;
 }
 
 static void	ft_pseachline(std::string str1, std::string str2,
 			std::string str3, std::string str4)
 {
+	std::cout << "|";
 	ft_pcontent(str1);
 	std::cout << "|";
 	ft_pcontent(str2);
@@ -34,10 +35,17 @@ static void	ft_pseachline(std::string str1, std::string str2,
 	ft_pcontent(str3);
 	std::cout << "|";
 	ft_pcontent(str4);
+	std::cout << "|" << std::endl;
+}
+
+static void ft_updwnborder(void)
+{
+	std::cout << std::setfill('-') << std::setw(45);
+	std::cout << "";
 	std::cout << std::endl;
 }
 
-void	ft_plist(const Contact (&book)[8])
+void	ft_plist(const Contact book[8])
 {
 	int i;
 
@@ -46,10 +54,12 @@ void	ft_plist(const Contact (&book)[8])
 		std::cout << "Your Awesome PhoneBook is empty..." << std::endl;
 		return ;
 	}
-	ft_pseachline("Index", "Fist Name", "Last Name", "Pseudo");
-	while (--i != 0)
+	ft_updwnborder();
+	ft_pseachline("Index", "Fist Name", "Last Name", "Nickname");
+	while (--i >= 0)
 	{
-		ft_pseachline(std::to_string(i), "Fist Name", "Name", "Pseudo");
+		ft_pseachline(std::to_string(i), book[i].first_name,
+				book[i].last_name, book[i].nickname);
 	}
-	(void)book;
+	ft_updwnborder();
 }
