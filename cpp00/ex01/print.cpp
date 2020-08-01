@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 15:52:08 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 19:30:58 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 20:51:50 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,8 @@ static void ft_updwnborder(void)
 	std::cout << std::endl;
 }
 
-void	ft_plist(const Contact book[8])
+void		ft_plist(const Contact book[8], int i)
 {
-	int i;
-
-	if ((i = Contact::getContactNb()) == 0)
-	{
-		std::cout << "Your Awesome PhoneBook is empty..." << std::endl;
-		return ;
-	}
 	ft_updwnborder();
 	ft_pseachline("Index", "Fist Name", "Last Name", "Nickname");
 	while (--i >= 0)

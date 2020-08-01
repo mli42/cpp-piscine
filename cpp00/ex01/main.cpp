@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 00:43:46 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 19:05:55 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 22:59:05 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,29 @@ static void	ft_add(Contact book[8])
 
 static void	ft_search(Contact book[8])
 {
-	ft_plist(book);
+	int i;
+	int choosen = -1;
+	int cinfail;
+
+	if ((i = Contact::getContactNb()) == 0)
+	{
+		std::cout << "Your AwesomePhoneBook is empty..." << std::endl;
+		return ;
+	}
+	ft_plist(book, i);
+	while ((choosen < 0 || choosen >= i || cinfail) && !std::cin.eof())
+	{
+		std::cout << "Which one do you want to see ? "; std::cin >> choosen;
+		if ((cinfail = std::cin.fail()))
+		{
+			if (!std::cin.eof())
+				std::cout << "An integer moron...\n";
+			std::cin.clear();
+			std::cin.ignore();
+		}
+	}
+	std::cin.clear();
+	std::cin.ignore();
 }
 
 static void	ft_ask(void)
@@ -35,9 +57,9 @@ static void	ft_ask(void)
 		"or \e[91mEXIT\e[m ? > ";
 }
 
-static void	ft_exit(const std::string &input)
+static void	ft_exit(void)
 {
-	if (input == "")
+	if (std::cin.eof())
 		std::cout << "\n";
 	std::cout << "\n\t\tSee you next time !\n\n";
 }
@@ -54,8 +76,9 @@ int		main(void)
 			ft_add(book);
 		else if (input == "SEARCH")
 			ft_search(book);
-		ft_ask();
+		if (!std::cin.eof() && !std::cin.fail())
+			ft_ask();
 	}
-	ft_exit(input);
+	ft_exit();
 	return (0);
 }
