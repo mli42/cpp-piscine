@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 00:43:46 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 22:59:05 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 23:09:42 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static void	ft_search(Contact book[8])
 	}
 	std::cin.clear();
 	std::cin.ignore();
+	if (!((choosen < 0 || choosen >= i || cinfail) && !std::cin.eof()))
+		ft_pContact(book[choosen]);
 }
 
 static void	ft_ask(void)

@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 15:52:08 by mli               #+#    #+#             */
-/*   Updated: 2020/08/01 20:51:50 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/01 23:22:13 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,21 @@ void		ft_plist(const Contact book[8], int i)
 				book[i].last_name, book[i].nickname);
 	}
 	ft_updwnborder();
+}
+
+void		ft_pContact(const Contact &contact)
+{
+	std::cout << "The details of this Contact are:\n";
+
+	std::cout << "Fist Name : " << contact.first_name << std::endl;
+	std::cout << "Last Name : " << contact.last_name << std::endl;
+	std::cout << "Nickname : " << contact.nickname << std::endl;
+	std::cout << "Login : " << contact.login << std::endl;
+	std::cout << "Postal Address : " << contact.postal_address << std::endl;
+	std::cout << "Email Address : " << contact.email_address << std::endl;
+	std::cout << "Phone Number : " << contact.phone_number << std::endl;
+	std::cout << "Birthday date : " << contact.birthday_date << std::endl;
+	std::cout << "Favorite Meal : " << contact.favorite_meal << std::endl;
+	std::cout << "Underwear Color : " << contact.underwear_color << std::endl;
+	std::cout << "Darkest Secret : " << contact.darkest_secret << std::endl;
 }
