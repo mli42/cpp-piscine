@@ -6,19 +6,15 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 13:41:59 by mli               #+#    #+#             */
-/*   Updated: 2020/08/02 15:44:09 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/02 23:25:26 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Account.class.hpp"
 
-Account::Account(int initial_deposit) {
-	this->_accountIndex = Account::_nbAccounts;
-	this->_amount = initial_deposit;
-	this->_nbDeposits = 0;
-	this->_nbWithdrawals = 0;
-
+Account::Account(int initial_deposit) : _accountIndex(Account::_nbAccounts),
+	_amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) {
 	Account::_nbAccounts++;
 //	Account::_totalNbDeposits++;
 	Account::_totalAmount += this->_amount;
