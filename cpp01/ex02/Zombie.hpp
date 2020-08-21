@@ -2,6 +2,7 @@
 # define ZOMBIE_CLASS_HPP
 
 #include <string>
+#include <iostream>
 
 class Zombie {
 	public:

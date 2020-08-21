@@ -10,6 +10,7 @@ class ZombieEvent {
 
 		void	setZombieType(std::string type);
 		Zombie	*newZombie(std::string name);
+		Zombie	*randomChump(void);
 
 	private:
 		std::string type;

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Zombie.hpp"
 
 Zombie::Zombie(std::string name, std::string type) : name(name), type(type) {
@@ -10,5 +9,5 @@ Zombie::~Zombie(void) {
 }
 
 void Zombie::advert(void) {
-	std::cout << "<" << this->name << " " << this->type << ">" << " Braiiiiiiinnnssss ...\n";
+	std::cout << "<" << this->name << " (" << this->type << ")>" << " Braiiiiiiinnnssss ...\n";
 }
