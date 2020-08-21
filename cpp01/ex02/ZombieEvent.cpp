@@ -17,8 +17,8 @@ Zombie	*ZombieEvent::newZombie(std::string name) {
 }
 
 Zombie	*ZombieEvent::randomChump(void) {
-	const std::string name[] = {"John", "Alexia", "Guigui", "Auguste", "Jehanne"
-		"Emma", "Jojo", "Red1", "Blue2th", "Froufrou"};
+	const std::string name[] = {"John", "Alexia", "Guigui", "Auguste",
+		"Jehanne", "Emma", "Jojo", "Red1", "Blue2th", "Froufrou"};
 	const int alea = std::rand() % sizeof(name) / sizeof(*name);
 	Zombie	*nZombie = newZombie(name[alea]);
 
