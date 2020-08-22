@@ -11,9 +11,10 @@ class ZombieHorde {
 		void	announce(void);
 
 		Zombie		*Horde;
-		const int	nbHorde;
+		static void	randomAttributes(Zombie &nZombie);
 
 	private:
+		const int	nbHorde;
 };
 
 #endif // ***************************************** ZOMBIEHORDE_CLASS_HPP end //
