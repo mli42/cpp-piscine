@@ -35,3 +35,5 @@ int		Fixed::getRawBits(void) const {
 void	Fixed::setRawBits(int const raw) {
 	this->_value = raw;
 }
+
+const int Fixed::_fbits = 8;

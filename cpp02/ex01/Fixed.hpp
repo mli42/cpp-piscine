@@ -7,6 +7,8 @@
 class Fixed {
 	public:
 		Fixed(void);
+		Fixed(const int value);
+		Fixed(const float value);
 		Fixed(Fixed const &src);
 		~Fixed(void);
 
@@ -14,6 +16,9 @@ class Fixed {
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+
+		float	toFloat(void) const;
+		int		toInt(void) const;
 
 	private:
 		int					_value;
