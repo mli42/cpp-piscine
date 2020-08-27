@@ -10,18 +10,7 @@ Fixed::Fixed(const int value) : _value(value << Fixed::_fbits) {
 
 Fixed::Fixed(const float value) : _value((int)value << Fixed::_fbits) {
 	std::cout << "Float constructor called" << std::endl;
-	int		i = 0;
-	float	remaindr = value - (int)value;
-	int		pointbitshift;
-
-	while (++i < Fixed::_fbits)
-	{
-		pointbitshift = 1 << i;
-		if (remaindr < (1.0 / pointbitshift))
-			continue ;
-		remaindr -= (1.0 / pointbitshift);
-		this->_value |= pointbitshift;
-	}
+	this->_value = roundf(value * (1 << Fixed::_fbits));
 }
 
 Fixed::Fixed(Fixed const &src) {
@@ -58,18 +47,7 @@ void	Fixed::setRawBits(int const raw) {
 const int Fixed::_fbits = 8;
 
 float	Fixed::toFloat(void) const {
-	int		fpart = ((char *)&this->_value)[0];
-	float	point;
-	int		i = Fixed::_fbits;
-
-	point = 0;
-	while (i > 0)
-	{
-		if ((fpart >> i) & 1)
-			point += 1.0 / (1 << i);
-		i--;
-	}
-	return (this->toInt() + point);
+	return ((float)this->_value / (1 << Fixed::_fbits));
 }
 
 int		Fixed::toInt(void) const {
