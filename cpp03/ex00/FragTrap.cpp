@@ -53,8 +53,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs) {
 }
 
 std::ostream	&operator<<(std::ostream &o, FragTrap const &i) {
-	(void)i;
-//	o << i.;
+	o << "\e[1;96mFR4G-TP\e[m (\e[95m" << i.name << "\e[m)";
 	return (o);
 }
 
@@ -66,7 +65,7 @@ void	FragTrap::rangedAttack(std::string const &target) const {
 	const std::string quote = quotes[alea];
 
 	this->SayQuote(quote);
-	std::cout << "FR4G-TP (" << this->name << "): attacks " << target \
+	std::cout << *this << ": attacks " << target \
 	<< " at range, causing " << this->RangedDamage << " points of damage!" << std::endl;
 }
 
@@ -78,7 +77,7 @@ void	FragTrap::meleeAttack(std::string const &target) const {
 	const std::string quote = quotes[alea];
 
 	this->SayQuote(quote);
-	std::cout << "FR4G-TP (" << this->name << "): attacks " << target \
+	std::cout << *this << ": attacks " << target \
 	<< " , causing " << this->MeleeDamage << " points of damage!" << std::endl;
 }
 
@@ -99,8 +98,8 @@ void	FragTrap::takeDamage(unsigned int amount) {
 	else
 		this->HitPoints = 0;
 	this->SayQuote(quote);
-	std::cout << "FR4G-TP (" << this->name << ") is injured! \e[1;91mHis HP: " \
-		<< this->HitPoints << "\e[m" << std::endl;
+	std::cout << *this << " is injured! \e[1;91mHP: " \
+		<< this->HitPoints << " (-" << amount << ")\e[m" << std::endl;
 }
 
 void	FragTrap::beRepaired(unsigned int amount) {
@@ -120,7 +119,7 @@ void	FragTrap::beRepaired(unsigned int amount) {
 	this->SayQuote(quote);
 	std::cout << "Life and Energy have been restored \e[1;92m(+" << amount \
 		<< ")\e[m" << std::endl;
-	std::cout << "FR4G-TP (" << this->name << ") \e[1;92mHP: " \
+	std::cout << *this << " \e[1;92mHP: " \
 	<< this->HitPoints << " Energy: " << this->energy << "\e[m" << std::endl;
 }
 
@@ -128,19 +127,19 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target) {
 	const static int AttackCost = 25;
 	const static std::string attacks[] = {"farts on", "points his gun on", \
 		"sings with his *best* voice for", "cooked a poisoned meal for", \
-		"points his gun on"};
+		"runs away from"};
 	const int	alea = std::rand() % sizeof(attacks) / sizeof(*attacks);
 	const std::string attack = attacks[alea];
 
 	if (this->energy >= AttackCost)
 	{
-		std::cout << "FR4G-TP (" << this->name << ") " << attack << " " \
+		std::cout << *this << " " << attack << " " \
 			<< target << " and it's unexepectedly very effective..." \
 			<< std::endl;
 		this->energy -= AttackCost;
 	}
 	else
-		std::cout << "\e[1;91mSbir! I ran out of energy! Need " \
+		std::cout << "\e[1;91mEnergy not enough! Need " \
 			<< AttackCost - this->energy << " more...\e[m" << std::endl;
 }
 
