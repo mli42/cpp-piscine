@@ -13,15 +13,15 @@ class FragTrap {
 
 		FragTrap	&operator=(FragTrap const &rhs);
 
-		int			HitPoints;
-		int			MaxHitPoints;
-		int			energy;
-		int			MaxEnergy;
-		int			level;
-		std::string	name;
-		int			MeleeDamage;
-		int			RangedDamage;
-		int			ArmorDamageReduction;
+		unsigned int	HitPoints;
+		unsigned int	MaxHitPoints;
+		unsigned int	energy;
+		unsigned int	MaxEnergy;
+		unsigned int	level;
+		std::string		name;
+		unsigned int	MeleeDamage;
+		unsigned int	RangedDamage;
+		unsigned int	ArmorDamageReduction;
 
 		void		rangedAttack(std::string const &target) const;
 		void		meleeAttack(std::string const &target) const;
@@ -31,6 +31,7 @@ class FragTrap {
 		void		vaulthunter_dot_exe(std::string const &target);
 
 	private:
+		void		SayQuote(std::string quote) const;
 };
 
 std::ostream	&operator<<(std::ostream &o, FragTrap const & i);

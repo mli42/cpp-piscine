@@ -7,11 +7,18 @@ FragTrap::FragTrap(void) : HitPoints(100), MaxHitPoints(100), energy(100), \
 	std::cout << "Default Constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : name(name), HitPoints(100), \
-	MaxHitPoints(100), energy(100), MaxEnergy(100), level(1), MeleeDamage(30), \
+FragTrap::FragTrap(std::string name) : HitPoints(100), MaxHitPoints(100), \
+	energy(100), MaxEnergy(100), level(1), name(name), MeleeDamage(30), \
 	RangedDamage(20), ArmorDamageReduction(5) {
 	std::srand(std::time(NULL));
-	std::cout << this->name << ": Constructor called" << std::endl;
+	const static std::string quotes[] = {"Check me out!", \
+	"Now I will dominate!", "I'm so sexy!", "Hahahahaha! I'm alive!", \
+	"Back for more!", "Here we go again!"};
+	const int	alea = std::rand() % sizeof(quotes) / sizeof(*quotes);
+	const std::string quote = quotes[alea];
+
+	std::cout << "Constructor of FragTrap called" << std::endl;
+	this->SayQuote(quote);
 }
 
 FragTrap::FragTrap(FragTrap const &src) {
@@ -19,7 +26,14 @@ FragTrap::FragTrap(FragTrap const &src) {
 }
 
 FragTrap::~FragTrap(void) {
-	std::cout << this->name << ": Destructor called" << std::endl;
+	const static std::string quotes[] = {"I'll die the way I lived: annoying!" \
+	,"You can't kill me!", "I'm too pretty to die!", "Robot down!", \
+	"No, nononono NO!"};
+	const int	alea = std::rand() % sizeof(quotes) / sizeof(*quotes);
+	const std::string quote = quotes[alea];
+
+	std::cout << "Destructor of FragTrap called" << std::endl;
+	this->SayQuote(quote);
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &rhs) {
@@ -51,8 +65,8 @@ void	FragTrap::rangedAttack(std::string const &target) const {
 	const int	alea = std::rand() % sizeof(quotes) / sizeof(*quotes);
 	const std::string quote = quotes[alea];
 
-	std::cout << this->name << ": \"" << quote << "\"" << std::endl;
-	std::cout << "FR4G-TP: " << this->name << " attacks " << target \
+	this->SayQuote(quote);
+	std::cout << "FR4G-TP (" << this->name << "): attacks " << target \
 	<< " at range, causing " << this->RangedDamage << " points of damage!" << std::endl;
 }
 
@@ -63,8 +77,8 @@ void	FragTrap::meleeAttack(std::string const &target) const {
 	const int	alea = std::rand() % sizeof(quotes) / sizeof(*quotes);
 	const std::string quote = quotes[alea];
 
-	std::cout << this->name << ": \"" << quote << "\"" << std::endl;
-	std::cout << "FR4G-TP: " << this->name << " attacks " << target \
+	this->SayQuote(quote);
+	std::cout << "FR4G-TP (" << this->name << "): attacks " << target \
 	<< " , causing " << this->MeleeDamage << " points of damage!" << std::endl;
 }
 
@@ -84,7 +98,9 @@ void	FragTrap::takeDamage(unsigned int amount) {
 		this->HitPoints -= amount;
 	else
 		this->HitPoints = 0;
-	std::cout << "FR4G-TP (" << this->name << "): \"" << quote << "\"" << std::endl;
+	this->SayQuote(quote);
+	std::cout << "FR4G-TP (" << this->name << ") is injured! \e[1;91mHis HP: " \
+		<< this->HitPoints << "\e[m" << std::endl;
 }
 
 void	FragTrap::beRepaired(unsigned int amount) {
@@ -101,20 +117,33 @@ void	FragTrap::beRepaired(unsigned int amount) {
 		this->energy = this->MaxEnergy;
 	else
 		this->energy += amount;
-	std::cout << this->name << ": \"" << quote << "\"" << std::endl;
-	std::cout << "Life and Energy have been restored (+" << amount << ")" << std::endl;
+	this->SayQuote(quote);
+	std::cout << "Life and Energy have been restored \e[1;92m(+" << amount \
+		<< ")\e[m" << std::endl;
+	std::cout << "FR4G-TP (" << this->name << ") \e[1;92mHP: " \
+	<< this->HitPoints << " Energy: " << this->energy << "\e[m" << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const &target) {
 	const static int AttackCost = 25;
+	const static std::string attacks[] = {"farts on", "points his gun on", \
+		"sings with his *best* voice for", "cooked a poisoned meal for", \
+		"points his gun on"};
+	const int	alea = std::rand() % sizeof(attacks) / sizeof(*attacks);
+	const std::string attack = attacks[alea];
 
 	if (this->energy >= AttackCost)
 	{
-		std::cout << this->name << ": \"Look out everybody! Things are about to get awesome!\"" << std::endl;
+		std::cout << "FR4G-TP (" << this->name << ") " << attack << " " \
+			<< target << " and it's unexepectedly very effective..." \
+			<< std::endl;
 		this->energy -= AttackCost;
-		; // Do attack
 	}
 	else
-		std::cout << "Sbir! I ran out of energy! Need " \
-			<< AttackCost - this->energy << "more..." << std::endl;
+		std::cout << "\e[1;91mSbir! I ran out of energy! Need " \
+			<< AttackCost - this->energy << " more...\e[m" << std::endl;
+}
+
+void	FragTrap::SayQuote(std::string quote) const {
+	std::cout << this->name << ": \e[1;93m\"" << quote << "\"\e[m" << std::endl;
 }
