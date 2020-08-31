@@ -40,7 +40,8 @@ class ClapTrap {
 		void		SayMeleeAttQuote(void) const;
 		void		SayTakeDamageQuote(void) const;
 		void		SayBeRepairedQuote(void) const;
-		static std::string const	GetRandQuote(const std::string *quotes);
+		static std::string const	GetRandQuote(const std::string *quotes, \
+				const unsigned int arraysize);
 	private:
 		static int	randinit;
 };

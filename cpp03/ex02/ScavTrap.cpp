@@ -39,7 +39,7 @@ void	ScavTrap::challengeNewcomer(std::string const &target) {
 	if (this->energy >= AttackCost)
 	{
 		std::cout << *this << " challenges " << target << " at a " \
-			<< GetRandQuote(challenges) << "!!" << std::endl;
+			<< GetRandQuote(challenges, sizeof(challenges)) << "!!" << std::endl;
 		this->energy -= AttackCost;
 	}
 	else

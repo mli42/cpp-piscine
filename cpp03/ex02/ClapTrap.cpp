@@ -95,12 +95,13 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 }
 
 void	ClapTrap::SayQuote(std::string quote) const {
-	std::cout << "\e[1;94mSC4V-TP\e[m (\e[95m" << this->name << "\e[m)" \
+	std::cout << "\e[1;94m" << this->type << "\e[m (\e[95m" << this->name << "\e[m)" \
 		<< ": \e[1;93m\"" << quote << "\"\e[m" << std::endl;
 }
 
-std::string const	ClapTrap::GetRandQuote(const std::string *quotes) {
-	const int	alea = std::rand() % sizeof(quotes) / sizeof(*quotes);
+std::string const	ClapTrap::GetRandQuote(const std::string *quotes, \
+		unsigned int const arraysize) {
+	const int	alea = std::rand() % arraysize / sizeof(*quotes);
 	return (quotes[alea]);
 }
 
@@ -109,7 +110,7 @@ void	ClapTrap::SayConstructorQuote(void) const {
 	"Now I will dominate!", "I'm so sexy!", "Hahahahaha! I'm alive!", \
 	"Back for more!", "Here we go again!"};
 
-	this->SayQuote(ClapTrap::GetRandQuote(quotes));
+	this->SayQuote(ClapTrap::GetRandQuote(quotes, sizeof(quotes)));
 }
 
 void	ClapTrap::SayDestructorQuote(void) const {
@@ -117,7 +118,7 @@ void	ClapTrap::SayDestructorQuote(void) const {
 		"You can't kill me!", "I'll die the way I lived: annoying!", \
 		"Robot down!", "No, nononono NO!"};
 
-	this->SayQuote(ClapTrap::GetRandQuote(quotes));
+	this->SayQuote(ClapTrap::GetRandQuote(quotes, sizeof(quotes)));
 }
 
 void	ClapTrap::SayRangedAttQuote(void) const {
@@ -125,7 +126,7 @@ void	ClapTrap::SayRangedAttQuote(void) const {
 	"Sniped!", "Chk-chk, BOOM!", "Get ready for some ClapTrap face time!", \
 	"In yo' FACE!", "I expect you to die!"};
 
-	this->SayQuote(ClapTrap::GetRandQuote(quotes));
+	this->SayQuote(ClapTrap::GetRandQuote(quotes, sizeof(quotes)));
 }
 
 void	ClapTrap::SayMeleeAttQuote(void) const {
@@ -133,7 +134,7 @@ void	ClapTrap::SayMeleeAttQuote(void) const {
 	"Pain school is now in session.", "Guess who?", "Meet professor punch!", \
 	"Ready for the PUNCHline?!"};
 
-	this->SayQuote(ClapTrap::GetRandQuote(quotes));
+	this->SayQuote(ClapTrap::GetRandQuote(quotes, sizeof(quotes)));
 }
 
 void	ClapTrap::SayTakeDamageQuote(void) const {
@@ -142,12 +143,12 @@ void	ClapTrap::SayTakeDamageQuote(void) const {
 	"My robotic flesh! AAHH!", "Yikes! Ohhoho!", "Woah! Oh! Jeez!", \
 	"If only my chassis... weren't made of recycled human body parts! Wahahaha!"};
 
-	this->SayQuote(ClapTrap::GetRandQuote(quotes));
+	this->SayQuote(ClapTrap::GetRandQuote(quotes, sizeof(quotes)));
 }
 
 void	ClapTrap::SayBeRepairedQuote(void) const {
 	const static std::string quotes[] = {"Make my day.", \
 	"Gimme your best shot.", "Hit me, baby!", "Ya feeling lucky, punk?"};
 
-	this->SayQuote(ClapTrap::GetRandQuote(quotes));
+	this->SayQuote(ClapTrap::GetRandQuote(quotes, sizeof(quotes)));
 }

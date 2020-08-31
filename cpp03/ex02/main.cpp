@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 18:46:11 by mli               #+#    #+#             */
-/*   Updated: 2020/08/31 14:44:00 by mli              ###   ########.fr       */
+/*   Updated: 2020/08/31 15:19:52 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(void)
 	FragBot.vaulthunter_dot_exe("a rock4");
 	FragBot.vaulthunter_dot_exe("a rock5");
 
-// #######################################################
+	std::cout << "#######################################################\n";
 
 	ScavBot.meleeAttack("some target");
 	ScavBot.rangedAttack("some target");

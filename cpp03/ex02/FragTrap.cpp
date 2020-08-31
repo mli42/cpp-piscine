@@ -39,8 +39,8 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target) {
 
 	if (this->energy >= AttackCost)
 	{
-		std::cout << *this << " " << GetRandQuote(attacks) << " " \
-			<< target << " and it's unexepectedly very effective..." \
+		std::cout << *this << " " << GetRandQuote(attacks, sizeof(attacks)) \
+			<< " " << target << " and it's unexepectedly very effective..." \
 			<< std::endl;
 		this->energy -= AttackCost;
 	}
