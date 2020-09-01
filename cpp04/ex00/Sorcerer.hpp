@@ -1,6 +1,7 @@
 #ifndef SORCERER_CLASS_HPP
 # define SORCERER_CLASS_HPP
 
+# include "Victim.hpp"
 # include <iostream>
 # include <string>
 
@@ -14,11 +15,12 @@ class Sorcerer {
 
 		Sorcerer	&operator=(Sorcerer const &rhs);
 
-		std::string getName(void) const;
-		std::string setName(std::string name);
-		std::string getTitle(void) const;
-		std::string setTitle(std::string title);
+		std::string	getName(void) const;
+		void		setName(std::string name);
+		std::string	getTitle(void) const;
+		void		setTitle(std::string title);
 
+		void		polymorph(Victim const &) const;
 	protected:
 	private:
 		std::string	_name;
