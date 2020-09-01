@@ -5,16 +5,9 @@ SuperTrap::SuperTrap(void) : ClapTrap(), FragTrap(), NinjaTrap() {
 }
 
 SuperTrap::SuperTrap(std::string name) : \
-		ClapTrap(name, "SUP3R-TP"), FragTrap(name), NinjaTrap(name) {
+		ClapTrap(100, 100, 120, 120, 1, name, 60, 20, 5, "SUP3R-TP"), \
+		FragTrap(name), NinjaTrap(name) {
 	std::cout << "Constructor of SuperTrap called" << std::endl;
-	this->HitPoints = FragTrap::HitPoints;
-	this->MaxHitPoints = FragTrap::MaxHitPoints;
-	this->energy = NinjaTrap::energy;
-	this->MaxEnergy = NinjaTrap::MaxEnergy;
-	this->level = 1;
-	this->MeleeDamage = NinjaTrap::MeleeDamage;
-	this->RangedDamage = FragTrap::RangedDamage;
-	this->ArmorDamageReduction = FragTrap::ArmorDamageReduction;
 }
 
 SuperTrap::SuperTrap(SuperTrap const &src) {

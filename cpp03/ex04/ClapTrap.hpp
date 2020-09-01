@@ -11,7 +11,6 @@ class ClapTrap {
 			unsigned int energy, unsigned int MaxEnergy, unsigned int level, \
 			std::string  name, unsigned int MeleeDamage, unsigned int RangedDamage, \
 			unsigned int ArmorDamageReduction, std::string const type);
-		ClapTrap(std::string name, std::string type);
 		ClapTrap(ClapTrap const &src);
 		~ClapTrap(void);
 

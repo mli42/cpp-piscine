@@ -9,14 +9,6 @@ ClapTrap::ClapTrap(void) : name("Default"), type("CL4P-TP") {
 	SayConstructorQuote();
 }
 
-ClapTrap::ClapTrap(std::string const name,std::string const type) : \
-		name(name), type(type) {
-	if (!ClapTrap::randinit && ++ClapTrap::randinit)
-		std::srand(std::time(NULL));
-	std::cout << "Default Constructor of ClapTrap called" << std::endl;
-	SayConstructorQuote();
-}
-
 ClapTrap::ClapTrap(unsigned int HitPoints, unsigned int MaxHitPoints, \
     unsigned int energy, unsigned int MaxEnergy, unsigned int level, \
     std::string  name, unsigned int MeleeDamage, unsigned int RangedDamage, \
