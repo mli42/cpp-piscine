@@ -43,8 +43,10 @@ void		Character::recoverAP(void) {
 		this->_apcount = 40;
 }
 
-void		Character::attack(Enemy *enemy) {
-	if (!this->_cweapon || this->_cweapon->getAPCost() > this->_apcount)
+void		Character::attack(Enemy *&enemy) {
+	if (!enemy)
+		std::cout << "Enemy already dead or never existed!" << std::endl;
+	if (!this->_cweapon || !enemy || this->_cweapon->getAPCost() > this->_apcount)
 		return ;
 	std::cout << this->_name << " attacks " << enemy->getType() \
 		<< " with a " << this->_cweapon->getName() << std::endl;

@@ -18,7 +18,7 @@ class Character {
 
         void			recoverAP(void);
         void			equip(AWeapon *weapon);
-        void			attack(Enemy *enemy);
+        void			attack(Enemy *&enemy);
         std::string		getName(void) const;
 		int				getAPCount(void) const;
 		AWeapon const	*getWeapon(void) const;
