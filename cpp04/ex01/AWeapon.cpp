@@ -1,7 +1,7 @@
 #include "AWeapon.hpp"
 
 AWeapon::AWeapon(void) {
-	std::cout << "Default Constructor of AWeapon called" << std::endl;
+	;
 }
 
 AWeapon::AWeapon(AWeapon const &src) {
@@ -10,11 +10,11 @@ AWeapon::AWeapon(AWeapon const &src) {
 
 AWeapon::AWeapon(std::string const & name, int apcost, int damage) : \
 		_name(name), _apcost(apcost), _damage(damage) {
-	std::cout << "Constructor of AWeapon called" << std::endl;
+	;
 }
 
 AWeapon::~AWeapon(void) {
-	std::cout << "Destructor of AWeapon called" << std::endl;
+	;
 }
 
 AWeapon	&AWeapon::operator=(AWeapon const &rhs) {

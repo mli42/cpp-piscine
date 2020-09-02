@@ -35,6 +35,6 @@ std::string		Enemy::getType(void) const { return (this->_type); }
 int				Enemy::getHP(void) const { return (this->_hp); }
 
 void			Enemy::takeDamage(int hit) {
-	if (hit >= 0  && this->_hp >= hit)
+	if (hit >= 0)
 		this->_hp -= hit;
 }
