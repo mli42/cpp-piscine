@@ -5,7 +5,7 @@
 # include <string>
 
 class Enemy {
-	private:
+	protected:
 		Enemy(void);
 	public:
 		Enemy(Enemy const &src);
