@@ -15,6 +15,7 @@ Squad::~Squad(void) {
 Squad	&Squad::operator=(Squad const &rhs) {
 	if (this == &rhs)
 		return (*this);
+//	std::cout << "CALLED !!!" << std::endl;
 	this->SquadClean();
 	this->_tsquad = rhs._tsquad;
 	this->_SquadCount = rhs._SquadCount;
