@@ -25,7 +25,7 @@ std::ostream	&operator<<(std::ostream &o, Ice const &i) {
 	return (o);
 }
 
-AMateria		*AMateria::clone(void) const {
+AMateria		*Ice::clone(void) const {
 	Ice *copy = new Ice(*this);
 	return (copy);
 }

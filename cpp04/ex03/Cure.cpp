@@ -25,7 +25,7 @@ std::ostream	&operator<<(std::ostream &o, Cure const &i) {
 	return (o);
 }
 
-AMateria		*AMateria::clone(void) const {
+AMateria		*Cure::clone(void) const {
 	Cure *copy = new Cure(*this);
 	return (copy);
 }
