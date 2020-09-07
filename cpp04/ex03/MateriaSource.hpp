@@ -4,6 +4,7 @@
 # include "IMateriaSource.hpp"
 # include <iostream>
 # include <string>
+# include <string.h>
 
 class MateriaSource : public IMateriaSource {
 	public:

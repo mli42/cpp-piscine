@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 11:26:44 by mli               #+#    #+#             */
-/*   Updated: 2020/09/07 14:13:36 by mli              ###   ########.fr       */
+/*   Updated: 2020/09/07 15:23:15 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ int		main(void)
 	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	me->equip(src->createMateria("cure"));
+
+	AMateria *tmp2;
+	tmp2 = src->createMateria("cure");
+	me->equip(tmp2);
+	delete tmp2; tmp2 = NULL;
 
 	bob = new Character("TargetBob");
 
@@ -69,19 +73,19 @@ int		main(void)
 
 	std::cout << "#################################" << std::endl;
 
-	Character *mecpy = me;
-	mecpy->use(-1, *bob);
-	mecpy->use(0, *bob);
-	mecpy->use(1, *bob);
-	mecpy->use(2, *bob);
-	mecpy->use(3, *bob);
-	mecpy->use(4, *bob);
+	Character mecpy(*me);
+	mecpy.use(-1, *bob);
+	mecpy.use(0, *bob);
+	mecpy.use(1, *bob);
+	mecpy.use(2, *bob);
+	mecpy.use(3, *bob);
+	mecpy.use(4, *bob);
 
 	std::cout << "#################################" << std::endl;
 	for (int i = -1; i < 5; i++)
-		me->unequip(i);
+		mecpy.unequip(i);
 	for (int i = -1; i < 5; i++)
-		me->use(i, *bob);
+		mecpy.use(i, *bob);
 
 	std::cout << "#################################" << std::endl;
 	std::cout << "Last MateriaSource XP: " << tmp->getXP() << std::endl;

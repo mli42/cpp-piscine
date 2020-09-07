@@ -4,6 +4,7 @@
 # include "ICharacter.hpp"
 # include <iostream>
 # include <string>
+# include <string.h>
 
 class Character : public ICharacter {
 	protected:

@@ -38,7 +38,7 @@ void		MateriaSource::learnMateria(AMateria *m) {
 		if (this->_source[i] != NULL)
 		{
 			if (this->_source[i]->getType() == m->getType())
-				return ;
+				break ;
 		}
 		else
 		{
