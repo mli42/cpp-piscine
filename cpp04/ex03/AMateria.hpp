@@ -1,9 +1,10 @@
 #ifndef AMATERIA_CLASS_HPP
 # define AMATERIA_CLASS_HPP
 
-# include "ICharacter.hpp"
 # include <iostream>
 # include <string>
+# include "ICharacter.hpp"
+class ICharacter;
 
 class AMateria {
 	protected:

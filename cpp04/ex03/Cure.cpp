@@ -30,7 +30,7 @@ AMateria		*Cure::clone(void) const {
 	return (copy);
 }
 
-void			AMateria::use(ICharacter &target) {
+void			Cure::use(ICharacter &target) {
 	AMateria::use(target);
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

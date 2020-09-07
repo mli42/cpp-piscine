@@ -1,9 +1,10 @@
 #ifndef ICHARACTER_CLASS_HPP
 # define ICHARACTER_CLASS_HPP
 
-# include "AMateria.hpp"
 # include <iostream>
 # include <string>
+# include "AMateria.hpp"
+class AMateria;
 
 class ICharacter {
 	public:
