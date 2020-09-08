@@ -33,6 +33,6 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 
 void			RobotomyRequestForm::action(std::string const &target) const {
 	std::cout << "*drilling noises*" << std::endl;
-	std::cout << target << " being robotomized..." << \
+	std::cout << target << " being robotomized... " << \
 		(std::rand() % 2 ? ">> SUCCESS <<" : "FAILURE") << std::endl;
 }

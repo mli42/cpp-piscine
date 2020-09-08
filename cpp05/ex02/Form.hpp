@@ -30,6 +30,7 @@ class Form {
 		};
 
 		std::string const	getName(void) const;
+		std::string const	getTarget(void) const;
 		unsigned short int	getSignGrade(void) const;
 		unsigned short int	getExecGrade(void) const;
 		bool				getSignState(void) const;
