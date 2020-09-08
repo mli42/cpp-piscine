@@ -25,13 +25,14 @@ Form	&Form::operator=(Form const &rhs) {
 }
 
 std::ostream	&operator<<(std::ostream &o, Form const &i) {
-	o << i.getName() << "Signed(" << i.getSignState() << "); SignGrade(" \
+	o << i.getName() << ": Signed(" << i.getSignState() << "); SignGrade(" \
 		<< i.getSignGrade() << "); ExecGrade(" << i.getExecGrade() << ");";
+	o << std::endl;
 	return (o);
 }
 
 const char	*Form::GradeTooLowException::what(void) const throw()
-	{ return ("Form::Grade Too Low, Need a higher Graded Bureaucrat"); }
+	{ return ("Form::Grade Too Low, need a higher Graded Bureaucrat"); }
 
 const char	*Form::GradeTooHighException::what(void) const throw()
 	{ return ("Form::Grade Too High"); }
