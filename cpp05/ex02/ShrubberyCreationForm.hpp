@@ -16,8 +16,7 @@ class ShrubberyCreationForm : public Form {
 
 		ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &rhs);
 
-		virtual void		action(void) const;
-		std::string			target;
+		virtual void		action(std::string const &target) const;
 	protected:
 	private:
 };

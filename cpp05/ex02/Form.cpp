@@ -1,15 +1,16 @@
 #include "Form.hpp"
 
-Form::Form(void) : _name(""), _SignGrade(0), _ExecGrade(0) {
+Form::Form(void) : _name(""), _SignGrade(0), _ExecGrade(0), _target("") {
 	return ;
 }
 
-Form::Form(std::string const name, int signGrade, int execGrade) : \
-	_name(name), _SignGrade(signGrade), _ExecGrade(execGrade), _signed(false) {
+Form::Form(std::string const name, int signGrade, int execGrade, \
+		std::string target) : _name(name), _SignGrade(signGrade), \
+			_ExecGrade(execGrade), _signed(false), _target(target) {
 	return ;
 }
 
-Form::Form(Form const &src) : _name(""), _SignGrade(0), _ExecGrade(0) {
+Form::Form(Form const &src) : _name(""), _SignGrade(0), _ExecGrade(0), _target(""){
 	*this = src;
 }
 
@@ -58,5 +59,5 @@ void				Form::execute(Bureaucrat const &sb) const {
 		throw Form::FormNotSigned();
 	if (sb.getGrade() > this->_ExecGrade)
 		throw Form::GradeTooLowException();
-	this->action();
+	this->action(this->_target);
 }

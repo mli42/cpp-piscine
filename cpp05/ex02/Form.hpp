@@ -12,7 +12,8 @@ class Form {
 	protected:
 		Form(void);
 	public:
-		Form(std::string const name, int signGrade, int execGrade);
+		Form(std::string const name, int signGrade, int execGrade, \
+				std::string const target);
 		Form(Form const &src);
 		virtual ~Form(void);
 
@@ -35,13 +36,14 @@ class Form {
 
 		void				beSigned(Bureaucrat const &sb);
 		void				execute(Bureaucrat const &sb) const;
-		virtual void		action(void) const = 0;
+		virtual void		action(std::string const &target) const = 0;
 	protected:
 	private:
 		std::string const			_name;
 		unsigned short int const	_SignGrade;
 		unsigned short int const	_ExecGrade;
 		bool						_signed;
+		std::string const			_target;
 };
 
 std::ostream	&operator<<(std::ostream &o, Form const & i);

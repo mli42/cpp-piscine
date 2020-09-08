@@ -5,7 +5,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void) {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : \
-		Form("ShrubberyCreationForm", 145, 137), target(target) {
+		Form("ShrubberyCreationForm", 145, 137, target) {
 	return ;
 }
 
@@ -24,8 +24,8 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-void			ShrubberyCreationForm::action(void) const {
-	std::ofstream   ofs(this->target + "_shrubbery");
+void			ShrubberyCreationForm::action(std::string const &target) const {
+	std::ofstream   ofs(target + "_shrubbery");
 
 	ofs << \
 "                                              ."		<< std::endl << \
