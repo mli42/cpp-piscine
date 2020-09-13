@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 12:05:17 by mli               #+#    #+#             */
-/*   Updated: 2020/09/13 14:11:19 by mli              ###   ########.fr       */
+/*   Updated: 2020/09/13 20:58:24 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,6 @@ std::ostream	&operator<<(std::ostream &o, span const &i) {
 	return (o);
 }
 
-template<typename InputIterator>
-void			span::add(InputIterator start, InputIterator end) {
-	if ((end - start) + this->content.size() > this->_n)
-		throw span::SpanFull();
-	this->content.insert(this->content.end(), start, end);
-}
-
 const char	*span::SpanFull::what() const throw() {
 	return ("Span is Full");
 }
@@ -74,7 +67,7 @@ int			span::shortestSpan(void) const {
 	mins[0] = *std::min_element(this->content.begin(), this->content.end());
 	first_min_it= std::find(this->content.begin(), this->content.end(), mins[0]);
 	submin[0] = (&this->content.front() == &(*first_min_it) ?
-		INT_MAX : *std::min_element(this->content.begin(), first_min_it - 1));
+		INT_MAX : *std::min_element(this->content.begin(), first_min_it));
 	submin[1] = (&this->content.back() == &(*first_min_it) ?
 		INT_MAX : *std::min_element(first_min_it + 1, this->content.end()));
 	mins[1] = std::min(submin[0], submin[1]);
