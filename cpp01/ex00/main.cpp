@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 22:58:42 by mli               #+#    #+#             */
-/*   Updated: 2020/08/03 23:12:49 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/06 10:34:57 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ void	ponyOnTheHeap(int const age, int const nbLegs, bool const freckles,
 
 int		main(void)
 {
+	std::cout << "###############################################" << std::endl;
 	ponyOnTheStack(7, 4, false, "O'Maley");
-	std::cout << std::endl;
+	std::cout << "###############################################" << std::endl;
 	ponyOnTheHeap(14, 5, true, "Frimousse");
+	std::cout << "###############################################" << std::endl;
 }
