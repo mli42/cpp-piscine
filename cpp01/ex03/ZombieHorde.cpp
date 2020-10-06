@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 12:20:24 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 12:20:25 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/06 11:48:30 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ZombieHorde::ZombieHorde(int N) : nbHorde(N) {
 	if (N < 0)
 		return ;
 
-	std::srand(std::time(NULL));
+	std::srand(::time(NULL));
 	this->Horde = new Zombie[N];
 
 	for (int i = 0; i < N; i++)

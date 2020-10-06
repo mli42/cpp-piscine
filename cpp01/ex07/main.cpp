@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 10:31:49 by mli               #+#    #+#             */
-/*   Updated: 2020/08/24 14:51:16 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/06 11:50:26 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		ft_goodline(std::string line, std::string &tmp, \
 {
 	unsigned long int	i = 0;
 	unsigned int		linelen = line.length();
-	const static int	lens1 = strlen(s1);
+	const static int	lens1 = std::string(s1).length();
 
 	while (i < linelen)
 	{

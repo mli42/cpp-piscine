@@ -6,14 +6,14 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 12:20:11 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 12:20:12 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/06 11:47:44 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
 ZombieEvent::ZombieEvent(void) {
-	std::srand(std::time(NULL));
+	std::srand(::time(NULL));
 }
 
 ZombieEvent::~ZombieEvent(void) {
