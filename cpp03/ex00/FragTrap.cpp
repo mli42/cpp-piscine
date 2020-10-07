@@ -15,14 +15,14 @@
 FragTrap::FragTrap(void) : HitPoints(100), MaxHitPoints(100), energy(100), \
 	MaxEnergy(100), level(1), MeleeDamage(30), RangedDamage(20), \
 	ArmorDamageReduction(5) {
-	std::srand(std::time(NULL));
+	std::srand(::time(NULL));
 	std::cout << "Default Constructor of FragTrap called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : HitPoints(100), MaxHitPoints(100), \
 	energy(100), MaxEnergy(100), level(1), name(name), MeleeDamage(30), \
 	RangedDamage(20), ArmorDamageReduction(5) {
-	std::srand(std::time(NULL));
+	std::srand(::time(NULL));
 	const static std::string quotes[] = {"Check me out!", \
 	"Now I will dominate!", "I'm so sexy!", "Hahahahaha! I'm alive!", \
 	"Back for more!", "Here we go again!"};

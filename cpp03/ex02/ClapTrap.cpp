@@ -16,7 +16,7 @@ int		ClapTrap::randinit = 0;
 
 ClapTrap::ClapTrap(void) {
 	if (!ClapTrap::randinit && ++ClapTrap::randinit)
-		std::srand(std::time(NULL));
+		std::srand(::time(NULL));
 	std::cout << "Default Constructor of ClapTrap called" << std::endl;
 	SayConstructorQuote();
 }
@@ -31,7 +31,7 @@ ClapTrap::ClapTrap(unsigned int HitPoints, unsigned int MaxHitPoints, \
 	type(type) {
 
 	if (!ClapTrap::randinit && ++ClapTrap::randinit)
-		std::srand(std::time(NULL));
+		std::srand(::time(NULL));
 	std::cout << "Constructor of ClapTrap called" << std::endl;
 	SayConstructorQuote();
 }

@@ -15,14 +15,14 @@
 ScavTrap::ScavTrap(void) : HitPoints(100), MaxHitPoints(100), energy(50), \
 	MaxEnergy(50), level(1), MeleeDamage(20), RangedDamage(15), \
 	ArmorDamageReduction(3) {
-	std::srand(std::time(NULL));
+	std::srand(::time(NULL));
 	std::cout << "Default Constructor of ScavTrap called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : HitPoints(100), MaxHitPoints(100), \
 	energy(50), MaxEnergy(50), level(1), name(name), MeleeDamage(20), \
 	RangedDamage(15), ArmorDamageReduction(3) {
-	std::srand(std::time(NULL));
+	std::srand(::time(NULL));
 	const static std::string quotes[] = {"Check me out!", \
 	"Now I will dominate!", "I'm so sexy!", "Hahahahaha! I'm alive!", \
 	"Back for more!", "Here we go again!"};
