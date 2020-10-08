@@ -22,7 +22,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const target) : \
 
 	if (i == 0)
 	{
-		std::srand(std::time(NULL));
+		std::srand(::time(NULL));
 		i++;
 	}
 	return ;
