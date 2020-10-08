@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 14:55:16 by mli               #+#    #+#             */
-/*   Updated: 2020/09/04 15:25:03 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/08 10:33:09 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 {
 	ISpaceMarine *bob = new TacticalMarine;
 	ISpaceMarine *jim = new AssaultTerminator;
-	Squad *vlc = new Squad;
+	ISquad *vlc = new Squad;
 	vlc->push(NULL);
 	vlc->push(bob);
 	vlc->push(jim);
@@ -36,7 +36,7 @@ std::cout<< "\t0 END\n" << std::endl;
 	ISpaceMarine	*A = new TacticalMarine;
 	ISpaceMarine	*B = new TacticalMarine;
 	ISpaceMarine	*C = new AssaultTerminator;
-	Squad			*MyCrew = new Squad;
+	ISquad			*MyCrew = new Squad;
 	MyCrew->push(NULL);
 	MyCrew->push(A);
 	MyCrew->push(B);
