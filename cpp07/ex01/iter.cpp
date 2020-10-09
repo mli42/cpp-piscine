@@ -25,7 +25,7 @@ static void ft_dorand(void)
 	static short int dorand = 0;
 
 	if (dorand == 0 && ++dorand)
-		std::srand(std::time(NULL));
+		std::srand(::time(NULL));
 }
 
 template<typename T>

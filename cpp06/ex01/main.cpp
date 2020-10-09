@@ -32,7 +32,7 @@ void	*serialize(void)
 
 	if (dorand == 0)
 	{
-		std::srand(std::time(NULL));
+		std::srand(::time(NULL));
 		dorand++;
 	}
 

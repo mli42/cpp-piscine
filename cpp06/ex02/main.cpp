@@ -19,7 +19,7 @@ static void	ft_dorand(void)
 	if (dorand)
 		return ;
 	dorand++;
-	std::srand(std::time(NULL));
+	std::srand(::time(NULL));
 }
 
 Base	*generate(void)
