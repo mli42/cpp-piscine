@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 13:49:06 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 13:49:07 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/11 19:25:19 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ Form::Form(void) : _name(""), _SignGrade(0), _ExecGrade(0), _target("") {
 Form::Form(std::string const name, int signGrade, int execGrade, \
 		std::string target) : _name(name), _SignGrade(signGrade), \
 			_ExecGrade(execGrade), _signed(false), _target(target) {
+	if (signGrade < 1 || execGrade < 1)
+		throw Form::GradeTooHighException();
+	else if (signGrade > 150 || execGrade > 150)
+		throw Form::GradeTooLowException();
 	return ;
 }
 
@@ -45,7 +49,7 @@ std::ostream	&operator<<(std::ostream &o, Form const &i) {
 }
 
 const char	*Form::GradeTooLowException::what(void) const throw()
-	{ return ("Form::Grade Too Low, need a higher Graded Bureaucrat"); }
+	{ return ("Form::Grade Too Low"); }
 
 const char	*Form::GradeTooHighException::what(void) const throw()
 	{ return ("Form::Grade Too High"); }

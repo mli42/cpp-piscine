@@ -18,6 +18,10 @@ Form::Form(void) : _name(""), _SignGrade(0), _ExecGrade(0), _target("") {
 
 Form::Form(std::string const name, int signGrade, int execGrade, \
 		std::string target) : _name(name), _SignGrade(signGrade), \
+	if (signGrade < 1 || execGrade < 1)
+		throw Form::GradeTooHighException();
+	else if (signGrade > 150 || execGrade > 150)
+		throw Form::GradeTooLowException();
 			_ExecGrade(execGrade), _signed(false), _target(target) {
 	return ;
 }
@@ -45,7 +49,7 @@ std::ostream	&operator<<(std::ostream &o, Form const &i) {
 }
 
 const char	*Form::GradeTooLowException::what(void) const throw()
-	{ return ("Form::Grade Too Low, need a higher Graded Bureaucrat"); }
+	{ return ("Form::Grade Too Low"); }
 
 const char	*Form::GradeTooHighException::what(void) const throw()
 	{ return ("Form::Grade Too High"); }
