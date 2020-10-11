@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 13:49:18 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 13:49:18 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/11 23:12:38 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 }
 
 void			ShrubberyCreationForm::action(std::string const &target) const {
-	std::ofstream   ofs(target + "_shrubbery");
+	std::ofstream   ofs((target + "_shrubbery").c_str());
 
 	ofs << \
 "                                              ."		<< std::endl << \
@@ -68,4 +68,5 @@ void			ShrubberyCreationForm::action(std::string const &target) const {
 "                    ;%@@@@%::;."						<< std::endl << \
 "                   ;%@@@@%%:;;;."						<< std::endl << \
 "               ...;%@@@@@%%:;;;;,.."					<< std::endl;
+	ofs.close();
 }

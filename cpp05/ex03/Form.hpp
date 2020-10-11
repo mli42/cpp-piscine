@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 13:49:27 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 13:49:29 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/11 23:15:25 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include <cstdlib>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
