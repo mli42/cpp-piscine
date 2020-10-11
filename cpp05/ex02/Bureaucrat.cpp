@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 13:49:03 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 13:49:04 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/11 16:13:20 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ Bureaucrat::Bureaucrat(void) {
 
 Bureaucrat::Bureaucrat(std::string const name, unsigned short int const grade) : \
 		_name(name), _grade(grade) {
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	return ;
 }
 
@@ -53,13 +57,17 @@ std::string const	Bureaucrat::getName(void) const { return (this->_name); }
 unsigned short int	Bureaucrat::getGrade(void) const { return (this->_grade); }
 
 void				Bureaucrat::incGrade(void) {
-	if (this->_grade-- == 1)
+	if (this->_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
+	else
+		this->_grade--;
 }
 
 void				Bureaucrat::decGrade(void) {
-	if (this->_grade++ == 150)
+	if (this->_grade == 150)
 		throw Bureaucrat::GradeTooLowException();
+	else
+		this->_grade++;
 }
 
 void				Bureaucrat::signForm(Form &form) const {
