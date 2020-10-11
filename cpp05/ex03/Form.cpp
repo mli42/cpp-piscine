@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 13:49:25 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 13:49:26 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/11 22:35:07 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ Form::Form(void) : _name(""), _SignGrade(0), _ExecGrade(0), _target("") {
 
 Form::Form(std::string const name, int signGrade, int execGrade, \
 		std::string target) : _name(name), _SignGrade(signGrade), \
+			_ExecGrade(execGrade), _signed(false), _target(target) {
 	if (signGrade < 1 || execGrade < 1)
 		throw Form::GradeTooHighException();
 	else if (signGrade > 150 || execGrade > 150)
 		throw Form::GradeTooLowException();
-			_ExecGrade(execGrade), _signed(false), _target(target) {
 	return ;
 }
 
