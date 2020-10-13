@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 16:24:46 by mli               #+#    #+#             */
-/*   Updated: 2020/09/11 10:14:23 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/13 14:50:24 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,17 @@ void	DispCmp(T const &a, T const &b, T const &(*fct)(T const &, T const &), \
 
 int		main(void)
 {
-	int a = 24; int b = 42;
+	int e = 24; int f = 42;
 	int equal_ONE = 30; int equal_TWO = 30;
 	std::string str[2] = {"First string", "Second string"};
 	const std::string mstr[2] = {"\e[91mmax\e[m", "\e[92mmin\e[m"};
 
-	DispSwap(a, b);
+	DispSwap(e, f);
 	DispSwap(str[0], str[1]);
 	DispSwap<std::string>(str[0], str[1]);
 
-	DispCmp(a, b, max, mstr[MAXSTR]);
-	DispCmp(a, b, min, mstr[MINSTR]);
+	DispCmp(e, f, max, mstr[MAXSTR]);
+	DispCmp(e, f, min, mstr[MINSTR]);
 
 	float fa = 24.24; float fb = 42.42;
 	DispCmp(fa, fb, max, mstr[MAXSTR]);
@@ -86,5 +86,19 @@ int		main(void)
 
 	DispCmp(equal_ONE, equal_TWO, max, mstr[MAXSTR]);
 	DispCmp(equal_ONE, equal_TWO, min, mstr[MINSTR]);
+
+	std::cout << "##################### Subject main #######################" << std::endl;
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	return (0);
 }

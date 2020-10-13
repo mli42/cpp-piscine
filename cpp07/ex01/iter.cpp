@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 10:29:02 by mli               #+#    #+#             */
-/*   Updated: 2020/09/11 11:51:01 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/13 16:38:09 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,14 @@ void	DispColorVar(T &c)
 int		main(void)
 {
 	char	str[] = "Hello";
-	char	array[][10] = {"First", "Second", "Third", "Lol"};
+	char	array[][10] = {"First\n", "Second\n", "Third\n", "Lol\n"};
 	int		ints[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 42};
 
 	iter(str, strlen(str), &DispColorVar); std::cout << std::endl;
-	iter(array, sizeof(array) / sizeof(*array), &DispColorVar); std::cout << std::endl;
-	iter(ints, sizeof(ints) / sizeof(int), &DispColorVar); std::cout << std::endl;
+std::cout << std::endl;
+	iter(array, sizeof(array) / sizeof(*array), &DispColorVar);
+std::cout << std::endl;
+	iter(ints, sizeof(ints) / sizeof(*ints), &DispColorVar);
+std::cout << std::endl;
 	return (0);
 }
