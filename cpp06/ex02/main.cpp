@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 14:01:51 by mli               #+#    #+#             */
-/*   Updated: 2020/09/10 14:53:13 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/13 12:19:15 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,21 @@ int		main(void)
 	identify_from_reference(*hey);
 
 	delete hey;
+
+	std::cout << "###############################################" << std::endl;
+	A a;
+	identify_from_pointer(&a);
+	identify_from_reference(a);
+
+	std::cout << "###############################################" << std::endl;
+	B b;
+	identify_from_pointer(&b);
+	identify_from_reference(b);
+
+	std::cout << "###############################################" << std::endl;
+	C c;
+	identify_from_pointer(&c);
+	identify_from_reference(c);
+
 	return (0);
 }
