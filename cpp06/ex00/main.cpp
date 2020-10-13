@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 14:54:36 by mli               #+#    #+#             */
-/*   Updated: 2020/09/09 16:29:25 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/13 12:35:36 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	printInt(double d) {
 	long int i = static_cast<long int>(d);
 
 	std::cout << "int: ";
-	if (isinf(i) || isnan(i) || i > INT_MAX || i < INT_MIN)
+	if (i > INT_MAX || i < INT_MIN)
 		std::cout << "impossible";
 	else
 		std::cout << i;
@@ -35,9 +35,10 @@ void	printInt(double d) {
 
 void	printChar(const char * const str, double d) {
 	const char c = (!isdigit(str[0]) && !str[1] ? str[0] : static_cast<char>(d));
+	const int i = static_cast<int>(d);
 
 	std::cout << "char: ";
-	if (isinf(d) || isnan(d) || d > CHAR_MAX || d < CHAR_MIN)
+	if (i > CHAR_MAX || i < CHAR_MIN)
 		std::cout << "impossible";
 	else if (!std::isprint(c))
 		std::cout << "Non displayable";
