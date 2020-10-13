@@ -6,12 +6,13 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 10:29:02 by mli               #+#    #+#             */
-/*   Updated: 2020/10/13 16:38:09 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/13 17:43:30 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 template<typename T>
 void	iter(T *a, size_t b, void (*c)(T &))
@@ -42,11 +43,11 @@ void	DispColorVar(T &c)
 
 int		main(void)
 {
-	char	str[] = "Hello";
+	std::string	str = "Hello";
 	char	array[][10] = {"First\n", "Second\n", "Third\n", "Lol\n"};
 	int		ints[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 42};
 
-	iter(str, strlen(str), &DispColorVar); std::cout << std::endl;
+	iter(str.c_str(), str.length(), &DispColorVar); std::cout << std::endl;
 std::cout << std::endl;
 	iter(array, sizeof(array) / sizeof(*array), &DispColorVar);
 std::cout << std::endl;
