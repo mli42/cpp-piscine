@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 15:49:00 by mli               #+#    #+#             */
-/*   Updated: 2020/10/15 16:28:16 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/15 19:17:15 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,18 @@
 
 # include <iostream>
 # include <string>
-# include <exception>
-# include <algorithm>
 
 # include <map>
 # include <vector>
 # include <list>
 # include <deque>
 
-class EasyFindNotFound : public std::exception {
-	virtual const char *what() const throw();
-};
-
-const char	*EasyFindNotFound::what() const throw () {
-	return ("EasyFindNotFound");
-}
-
 template<typename T>
-void		easyfind(T const &haystack, int needle)
+bool	easyfind(T const &haystack, int needle)
 {
-	typename T::const_iterator res;
-
-	res = std::find(haystack.begin(), haystack.end(), needle);
-	if (*res != needle)
-		throw ::EasyFindNotFound();
+	if (*std::find(haystack.begin(), haystack.end(), needle) == needle)
+		return (true);
+	return (false);
 }
 
 #endif // ******************************************** EASYFIND_CLASS_HPP end //
