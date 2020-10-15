@@ -6,12 +6,11 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 12:05:17 by mli               #+#    #+#             */
-/*   Updated: 2020/09/13 20:58:24 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/15 23:42:29 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
-#include <algorithm>
 
 span::span(void) : _n(0) {
 	return ;
@@ -43,23 +42,18 @@ std::ostream	&operator<<(std::ostream &o, span const &i) {
 	return (o);
 }
 
-const char	*span::SpanFull::what() const throw() {
-	return ("Span is Full");
-}
-
-const char	*span::SpanImpossible::what() const throw() {
-	return ("No numbers stored, or only one: no span to find");
-}
+std::string const span::ExcepSpanFull = "Span is Full";
+std::string const span::ExcepSpanImpossible = "Too few int in span: no span to find";
 
 void		span::addNumber(int newNumber) {
 	if (this->content.size() == this->_n)
-		throw span::SpanFull();
+		throw std::logic_error(span::ExcepSpanFull);
 	this->content.push_back(newNumber);
 }
 
 int			span::shortestSpan(void) const {
 	if (this->content.size() <= 1)
-		throw span::SpanImpossible();
+		throw std::logic_error(span::ExcepSpanImpossible);
 	int mins[2];
 	int submin[2];
 	std::deque<int>::const_iterator first_min_it;
@@ -76,7 +70,7 @@ int			span::shortestSpan(void) const {
 
 int			span::longestSpan(void) const {
 	if (this->content.size() <= 1)
-		throw span::SpanImpossible();
+		throw std::logic_error(span::ExcepSpanImpossible);
 	int const _max = *std::max_element(this->content.begin(), this->content.end());
 	int const _min = *std::min_element(this->content.begin(), this->content.end());
 	return (_max - _min);
