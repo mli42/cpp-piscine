@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 15:17:43 by mli               #+#    #+#             */
-/*   Updated: 2020/09/11 16:31:27 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/15 16:40:06 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,17 @@
 template<typename T>
 void	ft_find(T const &container, int needle)
 {
-	std::cout << "Search " << needle << ": " << easyfind(container, needle) << std::endl;
+	std::cout << "Search " << needle << ": ";
+	try
+	{
+		easyfind(container, needle);
+		std::cout << "Found! ✅";
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << " ❌";
+	}
+	std::cout << std::endl;
 }
 
 template<typename T>
