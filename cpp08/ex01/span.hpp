@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 12:05:19 by mli               #+#    #+#             */
-/*   Updated: 2020/10/15 23:42:19 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/16 10:20:44 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class span {
 		void			addNumber(int newNumber);
 		int				shortestSpan(void) const;
 		int				longestSpan(void) const;
-		unsigned int max_size(void) const;
+		unsigned int	max_size(void) const;
 
 		template<typename InputIterator>
 		void			add(InputIterator start, InputIterator end) {

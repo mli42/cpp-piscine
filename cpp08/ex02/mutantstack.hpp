@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 23:32:20 by mli               #+#    #+#             */
-/*   Updated: 2020/09/13 23:32:29 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/16 10:46:41 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ template<typename T>
 MutantStack<T>	&MutantStack<T>::operator=(MutantStack const &rhs) {
 	if (this == &rhs)
 		return (*this);
-	this->c = rhs.c;
+	std::stack<T>::operator=(rhs);
 	return (*this);
 }
 
