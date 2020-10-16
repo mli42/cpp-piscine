@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 12:05:19 by mli               #+#    #+#             */
-/*   Updated: 2020/10/16 10:20:44 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/16 12:34:11 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <climits>
 # include <deque>
 # include <exception>
 # include <algorithm>
