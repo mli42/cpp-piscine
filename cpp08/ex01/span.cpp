@@ -6,7 +6,7 @@
 /*   By: mli <mli@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 12:05:17 by mli               #+#    #+#             */
-/*   Updated: 2020/10/15 23:42:29 by mli              ###   ########.fr       */
+/*   Updated: 2020/10/17 15:37:02 by mli              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,21 @@ void		span::addNumber(int newNumber) {
 int			span::shortestSpan(void) const {
 	if (this->content.size() <= 1)
 		throw std::logic_error(span::ExcepSpanImpossible);
-	int mins[2];
-	int submin[2];
-	std::deque<int>::const_iterator first_min_it;
 
-	mins[0] = *std::min_element(this->content.begin(), this->content.end());
-	first_min_it= std::find(this->content.begin(), this->content.end(), mins[0]);
-	submin[0] = (&this->content.front() == &(*first_min_it) ?
-		INT_MAX : *std::min_element(this->content.begin(), first_min_it));
-	submin[1] = (&this->content.back() == &(*first_min_it) ?
-		INT_MAX : *std::min_element(first_min_it + 1, this->content.end()));
-	mins[1] = std::min(submin[0], submin[1]);
-	return (mins[1] - mins[0]);
+	span	tmp(*this);
+	int		shortSpan = INT_MAX;
+	std::sort(tmp.content.begin(), tmp.content.end());
+
+	std::deque<int>::iterator it = tmp.content.begin();
+	std::deque<int>::iterator ite = tmp.content.end();
+	--ite;
+	for ( ; it != ite; ++it)
+	{
+		int tmpSpan = *(it + 1) - *it;
+		if (tmpSpan < shortSpan)
+			shortSpan = tmpSpan;
+	}
+	return (shortSpan);
 }
 
 int			span::longestSpan(void) const {
